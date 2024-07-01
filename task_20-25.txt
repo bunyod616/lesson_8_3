@@ -1,0 +1,44 @@
+21 = https://www.codewars.com/kata/58029cc9af749f80e3001e34/train/python = New £5 notes collectors!
+
+def get_new_notes(salary, bills):
+    total_bills = sum(bills)
+    disposable_income = salary - total_bills
+    if disposable_income < 5:
+        return 0
+    return disposable_income // 5
+
+22 = https://www.codewars.com/kata/559590633066759614000063/train/python = The highest profit wins!
+
+def min_max(lst):
+    return [min(lst), max(lst)]
+
+23 = https://www.codewars.com/kata/5e4e8f5a72d9550032953717/train/python = List of all Rationals
+
+from collections import deque
+from typing import Generator, Tuple
+
+def all_rationals() -> Generator[Tuple[int, int], None, None]:
+    queue = deque([(1, 1)])
+    
+    while True:
+        a, b = queue.popleft()
+        yield (a, b)
+        queue.append((a, a + b))
+        queue.append((a + b, b))
+
+24 = https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/train/python = Sum of odd numbers
+
+def row_sum_odd_numbers(n):
+    return n ** 3
+
+25 = https://www.codewars.com/kata/54466996990c921f90000d61/train/python = Monotone travel
+
+def is_monotone(heights):
+    if not heights:
+        return True
+    
+    for i in range(len(heights) - 1):
+        if heights[i] > heights[i + 1]:
+            return False
+    
+    return True
